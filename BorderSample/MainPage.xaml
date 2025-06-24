@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BorderSample.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarHasShadow="False">
+    <ScrollView>
+        <VerticalStackLayout Padding="30,20" Spacing="25">
+            <Border StrokeThickness="5">
+                <Label Style="{StaticResource SubHeadline}" Text="A basic border!" />
+            </Border>
+
+            <Border StrokeShape="RoundRectangle 20" StrokeThickness="5">
+                <Label Style="{StaticResource SubHeadline}" Text="Rounded Corners? 100% " />
+            </Border>
+
+            <Border StrokeShape="RoundRectangle 50 0 0 50" StrokeThickness="5">
+                <Label Style="{StaticResource SubHeadline}" Text="Rounded Corners? But not on all sides? 100% " />
+            </Border>
+             
+
+            <Border
+                StrokeDashArray="10,5"
+                StrokeShape="Ellipse"
+                StrokeThickness="5">
+                <Label Style="{StaticResource SubHeadline}" Text="Ellipse, cause why not!" />
+            </Border>
+
+            <Border
+                HeightRequest="100"
+                StrokeShape="Ellipse"
+                StrokeThickness="5"
+                WidthRequest="100">
+                <Label
+                    Style="{StaticResource SubHeadline}"
+                    Text="Circles? EASY!"
+                    VerticalTextAlignment="Center" />
+            </Border>
+
+            <Border
+                StrokeDashArray="1,1"
+                StrokeDashOffset="6"
+                StrokeShape="RoundRectangle 20"
+                StrokeThickness="5">
+                <Label Style="{StaticResource SubHeadline}" Text="Dashed Border? Easy!" />
+            </Border>
+
+            <Border>
+                <Border.Stroke>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Offset="0.0" Color="Red" />
+                        <GradientStop Offset="1.0" Color="Blue" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+                <Label Style="{StaticResource SubHeadline}" Text="Gradient Stroke? No Problem!!" />
+            </Border>
+
+            <Border>
+                <Border.Stroke>
+                    <RadialGradientBrush Center="1.0,1.0">
+                        <GradientStop Offset="0.1" Color="Red" />
+                        <GradientStop Offset="1.0" Color="DarkBlue" />
+                    </RadialGradientBrush>
+                </Border.Stroke>
+                <Label Style="{StaticResource SubHeadline}" Text="Radial Gradient Strokes!" />
+            </Border>
+
+            <Border
+                StrokeDashArray="5,1"
+                StrokeDashOffset="6"
+                StrokeShape="RoundRectangle 20"
+                StrokeThickness="5">
+                <Border.Stroke>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Offset="0.1" Color="Red" />
+                        <GradientStop Offset="1.0" Color="DarkBlue" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+                <Label Style="{StaticResource SubHeadline}" Text="Dashed Gradient Border with Rounded Corners!" />
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
