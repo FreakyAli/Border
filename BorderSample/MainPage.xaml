@@ -6,78 +6,322 @@
     Shell.NavBarHasShadow="False">
     <ScrollView>
         <VerticalStackLayout Padding="30,20" Spacing="25">
-            <Border StrokeThickness="5">
-                <Label Style="{StaticResource SubHeadline}" Text="A basic border!" />
-            </Border>
-
-            <Border StrokeShape="RoundRectangle 20" StrokeThickness="5">
-                <Label Style="{StaticResource SubHeadline}" Text="Rounded Corners? 100% " />
-            </Border>
-
-            <Border StrokeShape="RoundRectangle 50 0 0 50" StrokeThickness="5">
-                <Label Style="{StaticResource SubHeadline}" Text="Rounded Corners? But not on all sides? 100% " />
-            </Border>
-             
-
-            <Border
-                StrokeDashArray="10,5"
-                StrokeShape="Ellipse"
-                StrokeThickness="5">
-                <Label Style="{StaticResource SubHeadline}" Text="Ellipse, cause why not!" />
-            </Border>
-
-            <Border
-                HeightRequest="100"
-                StrokeShape="Ellipse"
-                StrokeThickness="5"
-                WidthRequest="100">
+            <!--  Basic Border with Stroke and StrokeThickness  -->
+            <Border Stroke="Blue" StrokeThickness="2">
                 <Label
-                    Style="{StaticResource SubHeadline}"
-                    Text="Circles? EASY!"
-                    VerticalTextAlignment="Center" />
+                    Padding="10"
+                    HorizontalTextAlignment="Center"
+                    Text="Basic Border with Blue Stroke" />
             </Border>
 
+            <!--  Rounded Corners with StrokeShape  -->
             <Border
-                StrokeDashArray="1,1"
-                StrokeDashOffset="6"
-                StrokeShape="RoundRectangle 20"
-                StrokeThickness="5">
-                <Label Style="{StaticResource SubHeadline}" Text="Dashed Border? Easy!" />
+                Stroke="Red"
+                StrokeShape="RoundRectangle 15"
+                StrokeThickness="3">
+                <Label
+                    Padding="15"
+                    HorizontalTextAlignment="Center"
+                    Text="Rounded Rectangle Border" />
             </Border>
 
-            <Border>
+            <!--  Dashed Stroke with StrokeDashArray and StrokeDashOffset  -->
+            <Border
+                Stroke="Green"
+                StrokeDashArray="5,3"
+                StrokeDashOffset="2"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="2">
+                <Label Padding="12" Text="Dashed Border with Offset" />
+            </Border>
+
+            <!--  Gradient Stroke  -->
+            <Border StrokeShape="RoundRectangle 20" StrokeThickness="4">
                 <Border.Stroke>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Offset="0.0" Color="Red" />
-                        <GradientStop Offset="1.0" Color="Blue" />
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.0" Color="Purple" />
+                        <GradientStop Offset="1.0" Color="Orange" />
                     </LinearGradientBrush>
                 </Border.Stroke>
-                <Label Style="{StaticResource SubHeadline}" Text="Gradient Stroke? No Problem!!" />
+                <Label
+                    Padding="15"
+                    HorizontalOptions="Center"
+                    Text="Gradient Stroke Border" />
             </Border>
 
-            <Border>
-                <Border.Stroke>
-                    <RadialGradientBrush Center="1.0,1.0">
-                        <GradientStop Offset="0.1" Color="Red" />
-                        <GradientStop Offset="1.0" Color="DarkBlue" />
-                    </RadialGradientBrush>
-                </Border.Stroke>
-                <Label Style="{StaticResource SubHeadline}" Text="Radial Gradient Strokes!" />
-            </Border>
-
+            <!--  Background Color  -->
             <Border
-                StrokeDashArray="5,1"
-                StrokeDashOffset="6"
-                StrokeShape="RoundRectangle 20"
-                StrokeThickness="5">
-                <Border.Stroke>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Offset="0.1" Color="Red" />
-                        <GradientStop Offset="1.0" Color="DarkBlue" />
-                    </LinearGradientBrush>
-                </Border.Stroke>
-                <Label Style="{StaticResource SubHeadline}" Text="Dashed Gradient Border with Rounded Corners!" />
+                Background="LightBlue"
+                Stroke="DarkBlue"
+                StrokeShape="RoundRectangle 12"
+                StrokeThickness="2">
+                <Label Padding="10" Text="Border with Background Color" />
             </Border>
+
+            <!--  Gradient Background  -->
+            <Border
+                Stroke="Black"
+                StrokeShape="RoundRectangle 18"
+                StrokeThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.0" Color="LightPink" />
+                        <GradientStop Offset="1.0" Color="LightYellow" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Label Padding="15" Text="Gradient Background Border" />
+            </Border>
+
+            <!--  StrokeLineCap and StrokeLineJoin  -->
+            <Border
+                Stroke="Maroon"
+                StrokeDashArray="10,5"
+                StrokeLineCap="Round"
+                StrokeLineJoin="Round"
+                StrokeShape="RoundRectangle 8"
+                StrokeThickness="6">
+                <Label Padding="12" Text="Round Line Caps and Joins" />
+            </Border>
+
+            <!--  StrokeMiterLimit (visible with sharp corners)  -->
+            <Border
+                Stroke="DarkRed"
+                StrokeLineJoin="Miter"
+                StrokeMiterLimit="2"
+                StrokeThickness="8">
+                <Label Padding="15" Text="Miter Limit Border" />
+            </Border>
+
+            <!--  Complex Shape - Ellipse  -->
+            <Border
+                Background="LightCyan"
+                HeightRequest="100"
+                Stroke="Teal"
+                StrokeThickness="3"
+                WidthRequest="200">
+                <Border.StrokeShape>
+                    <Ellipse />
+                </Border.StrokeShape>
+                <Label Text="Ellipse Border" />
+            </Border>       
+
+             <!--  Complex Shape - Circle  -->
+            <Border
+                Background="LightCyan"
+                HeightRequest="100"
+                Stroke="Teal"
+                StrokeThickness="3"
+                WidthRequest="100">
+                <Border.StrokeShape>
+                    <Ellipse />
+                </Border.StrokeShape>
+                <Label Text="Circle Border" />
+            </Border>      
+
+            <!--  Padding Property  -->
+            <Border
+                Padding="20"
+                Background="Wheat"
+                Stroke="Chocolate"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="2">
+                <Label BackgroundColor="White" Text="Border with Padding" />
+            </Border>
+
+            <!--  HorizontalOptions and VerticalOptions  -->
+            <Border
+                Background="AliceBlue"
+                Stroke="Navy"
+                StrokeShape="RoundRectangle 15"
+                StrokeThickness="2"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                WidthRequest="200">
+                <Label Padding="10" Text="Positioned Border" />
+            </Border>
+
+            <!--  Shadow (Platform specific - works on some platforms)  -->
+            <Border
+                Background="White"
+                Stroke="Purple"
+                StrokeShape="RoundRectangle 20"
+                StrokeThickness="2">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.5"
+                        Radius="10"
+                        Offset="5,5" />
+                </Border.Shadow>
+                <Label Padding="15" Text="Border with Shadow" />
+            </Border>
+
+            <!--  Content with Multiple Children using Layout  -->
+            <Border
+                Background="MistyRose"
+                Stroke="OrangeRed"
+                StrokeShape="RoundRectangle 12"
+                StrokeThickness="2">
+                <VerticalStackLayout Padding="15" Spacing="10">
+                    <Label FontAttributes="Bold" Text="Multiple Content Items" />
+                    <Button
+                        BackgroundColor="Orange"
+                        Text="Button Inside Border"
+                        TextColor="White" />
+                    <Entry BackgroundColor="White" Placeholder="Entry inside border" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!--  Custom Path Shape  -->
+             <FlexLayout
+                AlignItems="Center"
+                Direction="Row"
+                JustifyContent="SpaceEvenly"
+                Wrap="Wrap">
+                <!--  Diamond  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 50,5 L 95,50 L 50,95 L 5,50 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Speech Bubble  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 10,10 L 80,10 C 85,10 90,15 90,20 L 90,60 C 90,65 85,70 80,70 L 45,70 L 30,85 L 35,70 L 20,70 C 15,70 10,65 10,60 L 10,20 C 10,15 15,10 10,10 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Rounded Diamond  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 50,8 C 52,8 54,10 56,12 L 88,44 C 90,46 90,54 88,56 L 56,88 C 54,90 52,92 50,92 C 48,92 46,90 44,88 L 12,56 C 10,54 10,46 12,44 L 44,12 C 46,10 48,8 50,8 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Hexagon  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 50,5 L 80,25 L 80,75 L 50,95 L 20,75 L 20,25 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Star  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 50,5 L 58,35 L 90,35 L 66,53 L 74,83 L 50,65 L 26,83 L 34,53 L 10,35 L 42,35 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Triangle  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 50,10 L 85,85 L 15,85 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Octagon  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 30,5 L 70,5 L 95,30 L 95,70 L 70,95 L 30,95 L 5,70 L 5,30 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Heart  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 50,25 C 50,15 40,5 25,5 C 10,5 5,15 5,25 C 5,35 15,45 50,80 C 85,45 95,35 95,25 C 95,15 90,5 75,5 C 60,5 50,15 50,25 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Arrow  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 5,35 L 60,35 L 60,15 L 95,50 L 60,85 L 60,65 L 5,65 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Cross/Plus  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 35,5 L 65,5 L 65,35 L 95,35 L 95,65 L 65,65 L 65,95 L 35,95 L 35,65 L 5,65 L 5,35 L 35,35 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  House  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 50,5 L 90,40 L 90,90 L 10,90 L 10,40 Z" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <!--  Pentagon  -->
+                <Border
+                    Background="Lavender"
+                    HeightRequest="100"
+                    Stroke="Indigo"
+                    StrokeThickness="2"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Path Data="M 50,5 L 85,35 L 70,85 L 30,85 L 15,35 Z" />
+                    </Border.StrokeShape>
+                </Border>
+            </FlexLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
